@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K.N. Global Academy | Nurturing Young Minds. Building Bright Futures.</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            800: '#1e3a8a',
+                            900: '#172554',
+                        },
+                        gold: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(23, 37, 84, 0.82), rgba(30, 58, 138, 0.75)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Ultimate Single Page Clean Print Styling */
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            body, html {
+                background: #ffffff !important;
+                width: 100% !important;
+                height: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: hidden !important;
+            }
+            body > *:not(#admission-modal) {
+                display: none !important;
+            }
+            #admission-modal {
+                position: absolute !important;
+                left: 0 !important;
+                top: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                background: #ffffff !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                z-index: 999999 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+            }
+            #admission-modal > div {
+                max-width: 100% !important;
+                width: 100% !important;
+                height: 100% !important;
+                background: #ffffff !important;
+                box-shadow: none !important;
+                border: none !important;
+                padding: 20px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            #admission-step-1, #admission-step-2, #admission-step-3, .no-print {
+                display: none !important;
+            }
+            #admission-step-4 {
+                display: block !important;
+                width: 100% !important;
+                max-width: 420px !important;
+                margin: auto !important;
+                padding: 0 !important;
+            }
+            #admission-slip-box {
+                width: 100% !important;
+                border: 2px solid #172554 !important;
+                background: #ffffff !important;
+                box-shadow: none !important;
+                padding: 20px !important;
+                margin: 0 auto !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-600 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-900 text-white text-xs md:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 flex-wrap">
+                <span class="flex items-center gap-1"><i data-lucide="phone" class="w-3.5 h-3.5 text-gold-500"></i> +91 7742900164</span>
+                <span class="flex items-center gap-1"><i data-lucide="phone" class="w-3.5 h-3.5 text-gold-500"></i> +91 93766605074</span>
+                <span class="flex items-center gap-1"><i data-lucide="mail" class="w-3.5 h-3.5 text-gold-500"></i> knglobalacademy6@gmail.com</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span id="top-session-badge" class="bg-gold-500 text-slate-900 px-2 py-0.5 rounded font-semibold animate-pulse">Admissions Open</span>
+                <button onclick="openAdminModal()" class="text-xs bg-slate-800 hover:bg-slate-700 px-2.5 py-1 rounded border border-slate-600 transition flex items-center gap-1">
+                    <i data-lucide="lock" class="w-3 h-3 text-gold-500"></i> Admin Portal
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & School Name -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-900 to-brand-700 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition">
+                        <i data-lucide="graduation-cap" class="w-7 h-7 text-gold-500"></i>
+                    </div>
+                    <div>
+                        <span class="block font-serif font-bold text-lg sm:text-xl text-brand-900 leading-tight">K.N. Global Academy</span>
+                        <span class="text-xs text-slate-500 tracking-wider uppercase font-semibold">International Standard Education</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+                    <a href="#home" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-600 rounded-lg transition">Home</a>
+                    <a href="#about" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-600 rounded-lg transition">About</a>
+                    <a href="#leadership" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-600 rounded-lg transition">Leadership</a>
+                    <a href="#academics" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-600 rounded-lg transition">Academics</a>
+                    <a href="#facilities" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-600 rounded-lg transition">Facilities</a>
+                    <a href="#gallery" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-600 rounded-lg transition">Gallery</a>
+                    <a href="#notices" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-600 rounded-lg transition">Notices</a>
+                    <a href="#contact" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-brand-600 rounded-lg transition">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <button onclick="openAdmissionModal()" class="bg-gold-500 hover:bg-gold-600 text-slate-900 font-bold px-5 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i> ADMISSION NOW
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex lg:hidden items-center gap-2">
+                    <button onclick="openAdmissionModal()" class="sm:hidden bg-gold-500 text-slate-900 px-3 py-1.5 rounded-lg text-xs font-bold">
+                        Apply Now
+                    </button>
+                    <button id="menu-btn" onclick="toggleMobileMenu()" class="p-2 text-slate-700 hover:text-brand-600 rounded-lg">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
+            <a href="#home" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Home</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-100">About Us</a>
+            <a href="#leadership" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-100">Leadership</a>
+            <a href="#academics" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-100">Academics</a>
+            <a href="#facilities" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-100">Facilities</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-100">Gallery</a>
+            <a href="#notices" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-100">Notices</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-100">Contact Us</a>
+            <div class="pt-2">
+                <button onclick="openAdmissionModal(); toggleMobileMenu();" class="w-full text-center bg-gold-500 hover:bg-gold-600 text-slate-900 font-bold py-2.5 rounded-xl shadow">
+                    ADMISSION NOW
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-[90vh] flex items-center justify-center text-white px-4 py-20 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center space-y-6 z-10">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-gold-400 font-semibold text-sm border border-white/20">
+                <i data-lucide="award" class="w-4 h-4"></i> Excellence in Education & Character Building
+            </div>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+                Welcome to <span class="text-gold-500">K.N. Global Academy</span>
+            </h1>
+            <p class="text-lg sm:text-2xl text-slate-200 max-w-3xl mx-auto font-light">
+                “Nurturing Young Minds. Building Bright Futures.”
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <button onclick="openAdmissionModal()" class="w-full sm:w-auto bg-gold-500 hover:bg-gold-600 text-slate-900 font-bold px-8 py-4 rounded-xl shadow-2xl transition transform hover:scale-105 flex items-center justify-center gap-2 text-lg">
+                    <i data-lucide="user-plus" class="w-5 h-5"></i> ADMISSION NOW
+                </button>
+                <a href="#about" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-semibold px-8 py-4 rounded-xl transition flex items-center justify-center gap-2 text-lg">
+                    EXPLORE OUR SCHOOL <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-12 bg-slate-50 [clip-path:polygon(0_100%,100%_100%,100%_0)]"></div>
+    </section>
+
+    <!-- Quick Stats Bar -->
+    <section class="max-w-7xl mx-auto px-4 -mt-10 sm:-mt-12 relative z-20 mb-16">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-100 grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-100 p-6">
+            <div class="text-center p-4">
+                <div class="text-3xl sm:text-4xl font-extrabold text-brand-900 mb-1">3+</div>
+                <div class="text-xs sm:text-sm text-slate-500 font-medium">Years of Excellence</div>
+            </div>
+            <div class="text-center p-4">
+                <div class="text-3xl sm:text-4xl font-extrabold text-brand-900 mb-1">500+</div>
+                <div class="text-xs sm:text-sm text-slate-500 font-medium">Enrolled Students</div>
+            </div>
+            <div class="text-center p-4">
+                <div class="text-3xl sm:text-4xl font-extrabold text-brand-900 mb-1">20+</div>
+                <div class="text-xs sm:text-sm text-slate-500 font-medium">Qualified Teachers</div>
+            </div>
+            <div class="text-center p-4">
+                <div class="text-3xl sm:text-4xl font-extrabold text-brand-900 mb-1">100%</div>
+                <div class="text-xs sm:text-sm text-slate-500 font-medium">Success Record</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="max-w-4xl mx-auto space-y-6 text-center">
+            <div class="inline-block bg-brand-100 text-brand-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                About K.N. Global Academy
+            </div>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900">
+                Empowering Students with Knowledge, Values & Innovation
+            </h2>
+            <p class="text-slate-600 leading-relaxed text-base sm:text-lg">
+                K.N. Global Academy stands as a beacon of academic rigor and moral integrity. Our holistic educational approach ensures that students excel not only in examinations but also develop critical thinking, leadership qualities, and empathy.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 text-left">
+                <div class="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                    <div class="bg-brand-50 p-2 rounded-lg text-brand-600"><i data-lucide="target" class="w-6 h-6"></i></div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Our Vision</h4>
+                        <p class="text-xs text-slate-500 mt-1">To cultivate dynamic leaders equipped for tomorrow's global challenges.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                    <div class="bg-brand-50 p-2 rounded-lg text-brand-600"><i data-lucide="compass" class="w-6 h-6"></i></div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Our Mission</h4>
+                        <p class="text-xs text-slate-500 mt-1">Delivering experiential learning within a safe and inspiring environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="py-16 bg-slate-100 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-100 px-3 py-1 rounded-full">School Administration</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900 mt-3">Leadership & Guidance</h2>
+                <p class="text-slate-600 mt-2">Meet the visionary leaders driving excellence at K.N. Global Academy.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Founder (Male) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 text-center p-6 flex flex-col items-center hover:shadow-xl transition">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-brand-100 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Founder Om Singhal" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-gold-600 mb-1">Founder</span>
+                    <h3 class="font-serif text-2xl font-bold text-brand-900">Om Singhal</h3>
+                    <p class="text-sm text-slate-600 mt-3 italic">
+                        “Education is the cornerstone of a progressive society. Our goal is to empower every child with unmatched values and knowledge.”
+                    </p>
+                </div>
+
+                <!-- Director (Female) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 text-center p-6 flex flex-col items-center hover:shadow-xl transition">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-brand-100 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Director Suman Singhal" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-gold-600 mb-1">Director</span>
+                    <h3 class="font-serif text-2xl font-bold text-brand-900">Suman Singhal</h3>
+                    <p class="text-sm text-slate-600 mt-3 italic">
+                        “We foster an environment where curiosity is celebrated and innovation meets practical learning for young minds.”
+                    </p>
+                </div>
+
+                <!-- Principal (Female) -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 text-center p-6 flex flex-col items-center hover:shadow-xl transition">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-brand-100 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" alt="Principal Mohini Bansal" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-gold-600 mb-1">Principal</span>
+                    <h3 class="font-serif text-2xl font-bold text-brand-900">Mohini Bansal</h3>
+                    <p class="text-sm text-slate-600 mt-3 italic">
+                        “Our dedicated faculty and modern curriculum ensure that every student achieves their highest academic and personal potential.”
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academics Section -->
+    <section id="academics" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-100 px-3 py-1 rounded-full">Academic Programs</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900 mt-3">From Nursery to Class 12</h2>
+            <p class="text-slate-600 mt-2">Comprehensive curriculum designed for intellectual, emotional, and physical growth at every stage. Note: Classes 11 & 12 offer Science and Arts streams.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-brand-600 transition">
+                <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-4"><i data-lucide="baby" class="w-6 h-6"></i></div>
+                <h3 class="font-serif text-xl font-bold text-brand-900 mb-2">Nursery</h3>
+                <p class="text-xs text-slate-500 mb-4">Play-way learning, motor skills development, and joyful socialization.</p>
+                <span class="text-xs font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded">Ages 3+</span>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-brand-600 transition">
+                <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-4"><i data-lucide="book-open" class="w-6 h-6"></i></div>
+                <h3 class="font-serif text-xl font-bold text-brand-900 mb-2">Kindergarten (KG) & Prep</h3>
+                <p class="text-xs text-slate-500 mb-4">Basic phonics, number concepts, creativity, and reading fluency.</p>
+                <span class="text-xs font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded">Ages 4-5+</span>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-brand-600 transition">
+                <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-4"><i data-lucide="graduation-cap" class="w-6 h-6"></i></div>
+                <h3 class="font-serif text-xl font-bold text-brand-900 mb-2">Primary School (1 - 5)</h3>
+                <p class="text-xs text-slate-500 mb-4">Core academics, language proficiency, environmental studies, and arts.</p>
+                <span class="text-xs font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded">Grades I - V</span>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-brand-600 transition">
+                <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-4"><i data-lucide="award" class="w-6 h-6"></i></div>
+                <h3 class="font-serif text-xl font-bold text-brand-900 mb-2">Middle School (6 - 8)</h3>
+                <p class="text-xs text-slate-500 mb-4">Advanced sciences, mathematics, coding introduction, and sports training.</p>
+                <span class="text-xs font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded">Grades VI - VIII</span>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-brand-600 transition">
+                <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-4"><i data-lucide="book" class="w-6 h-6"></i></div>
+                <h3 class="font-serif text-xl font-bold text-brand-900 mb-2">Secondary School (9 - 10)</h3>
+                <p class="text-xs text-slate-500 mb-4">Board examination preparation, rigorous conceptual clarity, and practical labs.</p>
+                <span class="text-xs font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded">Grades IX - X</span>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-brand-600 transition">
+                <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-4"><i data-lucide="atom" class="w-6 h-6"></i></div>
+                <h3 class="font-serif text-xl font-bold text-brand-900 mb-2">Sr. Sec. — Science Stream (11 & 12)</h3>
+                <p class="text-xs text-slate-500 mb-4">Physics, Chemistry, Mathematics, Biology, and Computer Science.</p>
+                <span class="text-xs font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded">Grades XI - XII (Science)</span>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-brand-600 transition sm:col-span-2 lg:col-span-3">
+                <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-4"><i data-lucide="briefcase" class="w-6 h-6"></i></div>
+                <h3 class="font-serif text-xl font-bold text-brand-900 mb-2">Sr. Sec. — Arts Stream (11 & 12)</h3>
+                <p class="text-xs text-slate-500 mb-4">Humanities, History, Political Science, Geography, Economics, English, and Career Coaching.</p>
+                <span class="text-xs font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded">Grades XI - XII (Arts)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="py-16 bg-slate-100 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-100 px-3 py-1 rounded-full">Campus Infrastructure</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900 mt-3">World-Class Facilities</h2>
+                <p class="text-slate-600 mt-2">Designed to foster experiential learning, creativity, and robust physical fitness.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 group">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80" alt="Smart Classrooms" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-brand-900 mb-2">Smart Classrooms</h3>
+                        <p class="text-slate-600 text-sm">Air-conditioned classrooms equipped with interactive digital touch boards and high-speed Wi-Fi.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 group">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" alt="Science Laboratories" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-brand-900 mb-2">Advanced Science Labs</h3>
+                        <p class="text-slate-600 text-sm">State-of-the-art Physics, Chemistry, and Biology laboratories adhering to international safety standards.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 group">
+                    <img src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?auto=format&fit=crop&w=600&q=80" alt="Sports Arena" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-brand-900 mb-2">Sports & Playground</h3>
+                        <p class="text-slate-600 text-sm">Expansive football turf, basketball court, badminton courts, and indoor games facilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-100 px-3 py-1 rounded-full">Campus Life</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900 mt-3">Photo Gallery</h2>
+            <p class="text-slate-600 mt-2">Glimpses of daily life, celebrations, and achievements at K.N. Global Academy.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="rounded-2xl overflow-hidden shadow h-48 sm:h-64">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=500&q=80" alt="Gallery 1" class="w-full h-full object-cover hover:scale-110 transition duration-300">
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow h-48 sm:h-64">
+                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=500&q=80" alt="Gallery 2" class="w-full h-full object-cover hover:scale-110 transition duration-300">
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow h-48 sm:h-64">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=500&q=80" alt="Gallery 3" class="w-full h-full object-cover hover:scale-110 transition duration-300">
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow h-48 sm:h-64">
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=500&q=80" alt="Gallery 4" class="w-full h-full object-cover hover:scale-110 transition duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Notices Section -->
+    <section id="notices" class="py-16 bg-slate-100 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto space-y-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-100 px-3 py-1 rounded-full">Updates</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900 mt-3">Notice Board</h2>
+                <p class="text-slate-600 mt-2">Latest announcements, examination schedules, and circulars.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md border border-slate-200 divide-y divide-slate-100 max-w-4xl mx-auto p-6">
+                <div class="py-4 flex items-start gap-4">
+                    <div class="bg-brand-50 text-brand-600 px-3 py-2 rounded-xl text-center font-bold min-w-[70px]">
+                        <span class="block text-xs uppercase">Mar</span>
+                        <span class="text-lg">01</span>
+                    </div>
+                    <div>
+                        <h4 id="notice-session-title" class="font-bold text-slate-900">Admissions Open for Academic Session (Science & Arts)</h4>
+                        <p class="text-sm text-slate-600 mt-1">Applications are now live for Nursery to Class 12 (Science & Arts streams). Parents can apply online.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page Section -->
+    <section id="contact" class="py-16 bg-slate-100 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="space-y-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-100 px-3 py-1 rounded-full">Get in Touch</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900">Contact K.N. Global Academy</h2>
+                <p class="text-slate-600">We welcome inquiries regarding admissions, campus tours, and curriculum details.</p>
+                
+                <div class="space-y-4 pt-2">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-brand-900 text-gold-500 p-3 rounded-xl"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">School Address</h4>
+                            <p class="text-sm text-slate-600">252, Shri Rani Sati Nagar, Pali Meena, Purani Chungi, Agra Road, Jaipur, Rajasthan 302031</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="bg-brand-900 text-gold-500 p-3 rounded-xl"><i data-lucide="phone" class="w-6 h-6"></i></div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Phone Numbers</h4>
+                            <p class="text-sm text-slate-600">+91 7742900164, +91 93766605074</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="bg-brand-900 text-gold-500 p-3 rounded-xl"><i data-lucide="mail" class="w-6 h-6"></i></div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Email Address</h4>
+                            <p class="text-sm text-slate-600">knglobalacademy6@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-200">
+                <h3 class="font-serif text-2xl font-bold text-brand-900 mb-6">Send Us a Message</h3>
+                <form action="https://formsubmit.co/knglobalacademy6@gmail.com" method="POST" class="space-y-4">
+                    <input type="hidden" name="_subject" value="New Inquiry from K.N. Global Academy Website">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Your Name</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:outline-none text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Email or Phone</label>
+                        <input type="text" name="email_or_phone" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:outline-none text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Message</label>
+                        <textarea rows="4" name="message" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:outline-none text-sm"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-900 hover:bg-brand-800 text-white font-bold py-3 rounded-xl shadow transition">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8 border-t border-brand-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gold-500 flex items-center justify-center text-slate-900 font-bold">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <span class="font-serif text-xl font-bold">K.N. Global Academy</span>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                    Nurturing Young Minds. Building Bright Futures. Providing world-class holistic education from Nursery to Class 12 (Science & Arts).
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-gold-500 mb-4 uppercase text-xs tracking-wider">Quick Links</h4>
+                <ul class="space-y-2 text-xs text-slate-300">
+                    <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="#leadership" class="hover:text-white transition">Leadership</a></li>
+                    <li><a href="#academics" class="hover:text-white transition">Academics</a></li>
+                    <li><a href="#facilities" class="hover:text-white transition">Facilities</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-gold-500 mb-4 uppercase text-xs tracking-wider">Admissions</h4>
+                <ul class="space-y-2 text-xs text-slate-300">
+                    <li><a href="#" onclick="openAdmissionModal()" class="hover:text-white transition">Apply For Admission</a></li>
+                    <li><a href="#academics" class="hover:text-white transition">Streams (Science & Arts)</a></li>
+                    <li><a href="#notices" class="hover:text-white transition">Admission Notices</a></li>
+                    <li><a href="#contact" class="hover:text-white transition">Contact Admissions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-gold-500 mb-4 uppercase text-xs tracking-wider">Contact Info</h4>
+                <ul class="space-y-2 text-xs text-slate-300">
+                    <li>Phones: +91 7742900164, +91 93766605074</li>
+                    <li>Email: knglobalacademy6@gmail.com</li>
+                    <li>Address: 252, Shri Rani Sati Nagar, Pali Meena, Purani Chungi, Agra Road, Jaipur, Rajasthan 302031</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-brand-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400">
+            <p>&copy; 2026 K.N. Global Academy. All rights reserved.</p>
+            <p>Designed for Excellence.</p>
+        </div>
+    </footer>
+
+    <!-- FREELY MOVABLE FLOATING AI CHATBOT -->
+    <div id="ai-chatbot-widget" class="fixed bottom-6 right-6 z-50 select-none cursor-move">
+        <button id="chatbot-toggle-btn" onclick="toggleChatbotWindow()" class="w-14 h-14 bg-gradient-to-tr from-brand-900 to-brand-700 text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition border-2 border-gold-500">
+            <i data-lucide="bot" class="w-7 h-7 text-gold-500"></i>
+        </button>
+
+        <div id="chatbot-window" class="hidden absolute bottom-16 right-0 w-80 sm:w-96 bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col h-[450px]">
+            <div id="chatbot-header" class="bg-brand-900 text-white px-4 py-3 flex items-center justify-between cursor-grab active:cursor-grabbing">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-gold-500 flex items-center justify-center text-slate-900 font-bold">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">K.N. AI Counselor</h4>
+                        <span class="text-[10px] text-emerald-400 flex items-center gap-1">● Online & Ready</span>
+                    </div>
+                </div>
+                <button onclick="toggleChatbotWindow()" class="text-slate-300 hover:text-white p-1">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div id="chatbot-messages" class="flex-1 p-4 overflow-y-auto space-y-3 bg-slate-50 text-xs">
+                <div class="flex items-start gap-2">
+                    <div class="w-7 h-7 rounded-full bg-brand-900 text-gold-500 flex items-center justify-center font-bold text-xs shrink-0">AI</div>
+                    <div class="bg-white p-3 rounded-2xl shadow-sm border border-slate-200 text-slate-700 max-w-[80%]">
+                        Hello! Welcome to K.N. Global Academy. I am your K.N. AI Counselor. I have complete information about our school, classes from Nursery to Class 12, Science & Arts streams, facilities, and ₹2500 non-refundable admission process. Ask me anything!
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-3 bg-white border-t border-slate-200 flex items-center gap-2">
+                <input type="text" id="chatbot-input" placeholder="Ask about K.N. Global Academy..." onkeypress="handleChatKeyPress(event)" class="flex-1 px-3 py-2 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:outline-none text-xs">
+                <button onclick="sendChatMessage()" class="bg-brand-900 text-gold-500 p-2.5 rounded-xl hover:bg-brand-800 transition">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADMISSION MODAL -->
+    <div id="admission-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative">
+            <button onclick="closeAdmissionModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 p-2 no-print">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <!-- STEP 1: FORM -->
+            <div id="admission-step-1">
+                <div class="text-center mb-6">
+                    <span id="modal-session-badge" class="bg-gold-500 text-slate-900 px-3 py-1 rounded-full text-xs font-bold uppercase">Session</span>
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-brand-900 mt-2">Application Form</h3>
+                    <p class="text-xs text-slate-500 mt-1">Please fill out student details accurately. Registration Fee: <strong class="text-brand-900">₹2500</strong> <span class="text-red-600 font-semibold">(Non-Refundable)</span></p>
+                </div>
+
+                <form onsubmit="proceedToPayment(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Student Full Name *</label>
+                            <input type="text" id="app-name" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Date of Birth *</label>
+                            <input type="date" id="app-dob" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:outline-none text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Class Applying For *</label>
+                            <select id="app-class" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:outline-none text-sm">
+                                <option value="">Select Class / Stream</option>
+                                <option value="Nursery">Nursery</option>
+                                <option value="KG">Kindergarten (KG)</option>
+                                <option value="Prep">Prep</option>
+                                <option value="Class 1">Class 1</option>
+                                <option value="Class 2">Class 2</option>
+                                <option value="Class 3">Class 3</option>
+                                <option value="Class 4">Class 4</option>
+                                <option value="Class 5">Class 5</option>
+                                <option value="Class 6">Class 6</option>
+                                <option value="Class 7">Class 7</option>
+                                <option value="Class 8">Class 8</option>
+                                <option value="Class 9">Class 9</option>
+                                <option value="Class 10">Class 10</option>
+                                <option value="Class 11 Science">Class 11 (Science)</option>
+                                <option value="Class 11 Arts">Class 11 (Arts)</option>
+                                <option value="Class 12 Science">Class 12 (Science)</option>
+                                <option value="Class 12 Arts">Class 12 (Arts)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Parent/Guardian Name *</label>
+                            <input type="text" id="app-parent" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:outline-none text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Phone Number *</label>
+                            <input type="tel" id="app-phone" maxlength="10" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:outline-none text-sm" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Email Address *</label>
+                            <input type="email" id="app-email" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:outline-none text-sm" placeholder="Email Address">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Residential Address *</label>
+                        <textarea id="app-address" rows="2" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:outline-none text-sm" placeholder="Enter student's residential address"></textarea>
+                    </div>
+
+                    <div class="bg-amber-50 border border-amber-200 text-amber-900 p-3 rounded-xl text-xs">
+                        ⚠️ <strong>Note:</strong> Admission registration fee is <strong>₹2500</strong> and is strictly <strong>Non-Refundable</strong>.
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-900 hover:bg-brand-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition text-base">
+                        Proceed to Fee Payment Details (₹2500)
+                    </button>
+                </form>
+            </div>
+
+            <!-- STEP 2: PAYMENT INFO -->
+            <div id="admission-step-2" class="hidden text-center space-y-6">
+                <div>
+                    <span class="bg-gold-500 text-slate-900 px-3 py-1 rounded-full text-xs font-bold uppercase">Application Fee: ₹2500 (Non-Refundable)</span>
+                    <h3 class="font-serif text-2xl font-bold text-brand-900 mt-2">Payment Transfer Details</h3>
+                    <p class="text-xs text-slate-500 mt-1">Please use the details below to transfer the ₹2500 registration fee.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border-2 border-brand-900 inline-block mx-auto shadow-xl space-y-3 text-center max-w-sm w-full">
+                    <p class="text-xs font-bold uppercase text-slate-400">Payment Number</p>
+                    <p class="text-2xl font-mono font-extrabold text-brand-900 tracking-wider">7014568941</p>
+                    <hr class="border-slate-100">
+                    <p class="text-xs font-bold uppercase text-slate-400">UPI ID</p>
+                    <p class="text-sm font-mono font-bold text-slate-800 bg-slate-50 p-2 rounded-lg border border-slate-200">sumanomsinghal3184@okhdfcbank</p>
+                    <p class="text-xs font-extrabold text-emerald-600 pt-1">Amount: ₹2500.00 (Non-Refundable)</p>
+                </div>
+
+                <div class="space-y-4 max-w-md mx-auto">
+                    <button onclick="submitAdmissionApplication()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow transition text-sm">
+                        Admission Confirm
+                    </button>
+                    <div>
+                        <button onclick="backToForm()" class="text-xs text-slate-500 hover:text-slate-800 underline">
+                            Back to Edit Form Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3: SUBMITTED PENDING NOTICE -->
+            <div id="admission-step-3" class="hidden text-center space-y-6 py-6">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto">
+                    <i data-lucide="clock" class="w-8 h-8"></i>
+                </div>
+                <div>
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-bold uppercase">Application Submitted</span>
+                    <h3 class="font-serif text-2xl font-bold text-brand-900 mt-2">Application Sent to Admin!</h3>
+                    <p class="text-xs text-slate-600 mt-2 max-w-md mx-auto">
+                        Your application and fee payment reference have been submitted. Once the admin verifies the payment in the portal, your official admission confirmation slip will be unlocked and generated.
+                    </p>
+                </div>
+
+                <button onclick="closeAdmissionModal()" class="bg-brand-900 hover:bg-brand-800 text-white font-bold px-6 py-2.5 rounded-xl shadow text-xs">
+                    Done / Close
+                </button>
+            </div>
+
+            <!-- STEP 4: VERIFIED SLIP (Unlocked by Admin, single clean A4 print out) -->
+            <div id="admission-step-4" class="hidden text-center space-y-6 py-4">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto no-print">
+                    <i data-lucide="check" class="w-8 h-8"></i>
+                </div>
+                <div class="no-print">
+                    <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-xs font-bold uppercase">Admin Verified</span>
+                    <h3 class="font-serif text-3xl font-bold text-brand-900 mt-2">Admission is Confirmed!</h3>
+                    <p class="text-xs text-slate-600 mt-1">Your admission has been verified and approved by the admin. Below is your official admission slip.</p>
+                </div>
+
+                <!-- OFFICIAL ADMISSION SLIP -->
+                <div id="admission-slip-box" class="bg-slate-50 p-6 rounded-2xl border-2 border-brand-900 text-left space-y-3 relative shadow-md">
+                    <div class="text-center border-b border-slate-200 pb-3">
+                        <h4 class="font-serif font-bold text-lg text-brand-900">K.N. Global Academy</h4>
+                        <p id="slip-session-text" class="text-[11px] text-slate-500 uppercase tracking-wider">Official Admission Confirmation Slip</p>
+                        <p class="text-[10px] text-slate-400 mt-0.5">252, Shri Rani Sati Nagar, Pali Meena, Purani Chungi, Agra Road, Jaipur, Rajasthan 302031</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <div><span class="text-slate-500">Ref ID:</span> <strong id="slip-id" class="text-brand-900"></strong></div>
+                        <div><span class="text-slate-500">Date:</span> <strong id="slip-date"></strong></div>
+                        <div><span class="text-slate-500">Student Name:</span> <strong id="slip-name"></strong></div>
+                        <div><span class="text-slate-500">Class / Stream:</span> <strong id="slip-class"></strong></div>
+                        <div><span class="text-slate-500">Parent Name:</span> <strong id="slip-parent"></strong></div>
+                        <div><span class="text-slate-500">Phone:</span> <strong id="slip-phone"></strong></div>
+                        <div class="col-span-2"><span class="text-slate-500">Residential Address:</span> <strong id="slip-address"></strong></div>
+                    </div>
+                    <div class="border-t border-slate-200 pt-3 flex justify-between items-center text-xs">
+                        <div>
+                            <span class="text-slate-500 block">Fee Paid: ₹2500</span>
+                            <span class="text-[10px] text-red-600 font-semibold">(Non-Refundable)</span>
+                        </div>
+                        <span class="bg-emerald-600 text-white px-3 py-1 rounded-lg font-bold text-xs uppercase shadow">Verified & Confirmed</span>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 justify-center pt-2 no-print">
+                    <button onclick="window.print()" class="bg-slate-800 hover:bg-slate-700 text-white font-bold px-5 py-2.5 rounded-xl shadow text-xs flex items-center gap-2">
+                        <i data-lucide="printer" class="w-4 h-4"></i> Print Slip
+                    </button>
+                    <button onclick="closeAdmissionModal()" class="bg-brand-900 hover:bg-brand-800 text-white font-bold px-6 py-2.5 rounded-xl shadow text-xs">
+                        Done / Finish
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div id="admin-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-6 sm:p-8 relative">
+            <button onclick="closeAdminModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <i data-lucide="lock" class="w-6 h-6"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-brand-900">Admin Portal</h3>
+                <p class="text-xs text-slate-500 mt-1">Enter password to access admin dashboard.</p>
+            </div>
+            <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Password</label>
+                    <input type="password" id="admin-pass" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:outline-none text-sm" placeholder="Enter admin password">
+                </div>
+                <button type="submit" class="w-full bg-brand-900 hover:bg-brand-800 text-white font-bold py-3 rounded-xl shadow transition">
+                    Login to Dashboard
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN DASHBOARD MODAL -->
+    <div id="admin-dashboard-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative">
+            <button onclick="closeAdminDashboard()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
+                <div>
+                    <span class="bg-brand-100 text-brand-800 px-3 py-1 rounded-full text-xs font-bold uppercase">Authorized Access</span>
+                    <h3 class="font-serif text-2xl font-bold text-brand-900 mt-1">Admin Dashboard — K.N. Global Academy</h3>
+                </div>
+                <button onclick="closeAdminDashboard()" class="text-xs bg-slate-200 hover:bg-slate-300 px-3 py-1.5 rounded-lg font-semibold">
+                    Logout
+                </button>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-brand-50 p-4 rounded-2xl border border-brand-100 flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bold text-brand-900">Student Admissions Management</h4>
+                        <p class="text-xs text-slate-600">Verify payments and approve student admissions to issue confirmation slips.</p>
+                    </div>
+                    <span id="app-count-badge" class="bg-brand-900 text-white text-xs font-bold px-3 py-1 rounded-full">0 Applications</span>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-2xl">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 border-b border-slate-200">
+                                <th class="p-3">Ref ID</th>
+                                <th class="p-3">Student Name</th>
+                                <th class="p-3">Class / Stream</th>
+                                <th class="p-3">Parent Name</th>
+                                <th class="p-3">Phone</th>
+                                <th class="p-3">Status / Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-apps-table" class="divide-y divide-slate-100">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        lucide.createIcons();
+
+        // Automatic Academic Session Calculation
+        function getCurrentAcademicSession() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth(); 
+            let startYear = (month < 3) ? year - 1 : year;
+            let endYear = startYear + 1;
+            let startYY = startYear.toString().slice(-2);
+            let endYY = endYear.toString().slice(-2);
+            return `${startYear}-${endYear} (${startYY}-${endYY})`;
+        }
+
+        const activeSessionStr = getCurrentAcademicSession();
+        document.addEventListener('DOMContentLoaded', () => {
+            const topBadge = document.getElementById('top-session-badge');
+            if(topBadge) topBadge.innerText = `Admissions Open ${activeSessionStr}`;
+            
+            const modalBadge = document.getElementById('modal-session-badge');
+            if(modalBadge) modalBadge.innerText = `Session ${activeSessionStr}`;
+
+            const noticeTitle = document.getElementById('notice-session-title');
+            if(noticeTitle) noticeTitle.innerText = `Admissions Open for Academic Session ${activeSessionStr} (Science & Arts)`;
+
+            const slipSession = document.getElementById('slip-session-text');
+            if(slipSession) slipSession.innerText = `Official Admission Confirmation Slip (${activeSessionStr})`;
+        });
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Freely Movable Chatbot Widget Logic
+        const chatbotWidget = document.getElementById('ai-chatbot-widget');
+        const chatbotHeader = document.getElementById('chatbot-header');
+        let isDragging = false;
+        let startX, startY, initialX, initialY;
+
+        chatbotHeader.addEventListener('mousedown', dragStart);
+        chatbotHeader.addEventListener('touchstart', dragStart, {passive: true});
+
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('touchmove', drag, {passive: true});
+
+        document.addEventListener('mouseup', dragEnd);
+        document.addEventListener('touchend', dragEnd);
+
+        function dragStart(e) {
+            isDragging = true;
+            startX = e.clientX || e.touches[0].clientX;
+            startY = e.clientY || e.touches[0].clientY;
+            initialX = chatbotWidget.offsetLeft;
+            initialY = chatbotWidget.offsetTop;
+        }
+
+        function drag(e) {
+            if (!isDragging) return;
+            const currentX = e.clientX || e.touches[0].clientX;
+            const currentY = e.clientY || e.touches[0].clientY;
+            const dx = currentX - startX;
+            const dy = currentY - startY;
+
+            chatbotWidget.style.left = (initialX + dx) + 'px';
+            chatbotWidget.style.top = (initialY + dy) + 'px';
+            chatbotWidget.style.bottom = 'auto';
+            chatbotWidget.style.right = 'auto';
+        }
+
+        function dragEnd() {
+            isDragging = false;
+        }
+
+        function toggleChatbotWindow() {
+            const win = document.getElementById('chatbot-window');
+            win.classList.toggle('hidden');
+        }
+
+        // K.N. AI Counselor Knowledge Base
+        function sendChatMessage() {
+            const input = document.getElementById('chatbot-input');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const messagesArea = document.getElementById('chatbot-messages');
+            
+            messagesArea.innerHTML += `
+                <div class="flex items-end justify-end gap-2">
+                    <div class="bg-brand-900 text-white p-3 rounded-2xl shadow-sm max-w-[80%]">${text}</div>
+                    <div class="w-7 h-7 rounded-full bg-slate-300 flex items-center justify-center font-bold text-[10px] shrink-0">You</div>
+                </div>
+            `;
+            input.value = '';
+            messagesArea.scrollTop = messagesArea.scrollHeight;
+
+            setTimeout(() => {
+                let reply = "Hello! I am your K.N. AI Counselor. K.N. Global Academy provides world-class education from Nursery to Class 12. For Senior Secondary (Classes 11 & 12), we offer Science and Arts streams. The admission registration fee is ₹2500 (Non-Refundable). How can I assist you further?";
+                const lower = text.toLowerCase();
+                
+                if (lower.includes('fee') || lower.includes('cost') || lower.includes('pay') || lower.includes('upi')) {
+                    reply = "The admission registration fee is ₹2500 (Strictly Non-Refundable). You can transfer to phone number 7014568941 or UPI ID: sumanomsinghal3184@okhdfcbank.";
+                } else if (lower.includes('stream') || lower.includes('class 11') || lower.includes('class 12') || lower.includes('arts') || lower.includes('science')) {
+                    reply = "For Classes 11 and 12, K.N. Global Academy exclusively offers two comprehensive streams: Science and Arts.";
+                } else if (lower.includes('contact') || lower.includes('phone') || lower.includes('call') || lower.includes('email') || lower.includes('address')) {
+                    reply = "Our address is 252, Shri Rani Sati Nagar, Pali Meena, Purani Chungi, Agra Road, Jaipur, Rajasthan 302031. Phone: +91 7742900164, +91 93766605074, Email: knglobalacademy6@gmail.com.";
+                } else if (lower.includes('principal') || lower.includes('founder') || lower.includes('director') || lower.includes('leadership')) {
+                    reply = "Our school leadership consists of Om Singhal (Founder), Suman Singhal (Director), and Mohini Bansal (Principal).";
+                }
+
+                messagesArea.innerHTML += `
+                    <div class="flex items-start gap-2">
+                        <div class="w-7 h-7 rounded-full bg-brand-900 text-gold-500 flex items-center justify-center font-bold text-xs shrink-0">AI</div>
+                        <div class="bg-white p-3 rounded-2xl shadow-sm border border-slate-200 text-slate-700 max-w-[80%]">${reply}</div>
+                    </div>
+                `;
+                messagesArea.scrollTop = messagesArea.scrollHeight;
+            }, 600);
+        }
+
+        function handleChatKeyPress(e) {
+            if (e.key === 'Enter') sendChatMessage();
+        }
+
+        // Admission Modal Controls
+        let pendingAppData = null;
+
+        function openAdmissionModal() {
+            document.getElementById('admission-modal').classList.remove('hidden');
+            document.getElementById('admission-modal').classList.add('flex');
+            document.getElementById('admission-step-1').classList.remove('hidden');
+            document.getElementById('admission-step-2').classList.add('hidden');
+            document.getElementById('admission-step-3').classList.add('hidden');
+            document.getElementById('admission-step-4').classList.add('hidden');
+        }
+
+        function closeAdmissionModal() {
+            document.getElementById('admission-modal').classList.add('hidden');
+            document.getElementById('admission-modal').classList.remove('flex');
+        }
+
+        function proceedToPayment(e) {
+            e.preventDefault();
+            const phoneVal = document.getElementById('app-phone').value;
+            if (phoneVal.length !== 10) {
+                alert('Phone number must be exactly 10 digits.');
+                return;
+            }
+
+            // Generate sequential Reference ID starting from KN2026001, KN2026002 etc.
+            let applications = JSON.parse(localStorage.getItem('knga_confirmed_admissions') || '[]');
+            let nextIdNum = applications.length + 1;
+            let formattedSeq = String(nextIdNum).padStart(3, '0');
+
+            pendingAppData = {
+                id: 'KN2026' + formattedSeq,
+                name: document.getElementById('app-name').value,
+                dob: document.getElementById('app-dob').value,
+                className: document.getElementById('app-class').value,
+                parent: document.getElementById('app-parent').value,
+                phone: phoneVal,
+                email: document.getElementById('app-email').value,
+                address: document.getElementById('app-address').value,
+                fee: '₹2500 (Non-Refundable)',
+                date: new Date().toLocaleDateString(),
+                status: 'Pending Verification'
+            };
+
+            document.getElementById('admission-step-1').classList.add('hidden');
+            document.getElementById('admission-step-2').classList.remove('hidden');
+        }
+
+        function backToForm() {
+            document.getElementById('admission-step-2').classList.add('hidden');
+            document.getElementById('admission-step-1').classList.remove('hidden');
+        }
+
+        function submitAdmissionApplication() {
+            if (pendingAppData) {
+                let applications = JSON.parse(localStorage.getItem('knga_confirmed_admissions') || '[]');
+                applications.push(pendingAppData);
+                localStorage.setItem('knga_confirmed_admissions', JSON.stringify(applications));
+
+                document.getElementById('admission-step-2').classList.add('hidden');
+                document.getElementById('admission-step-3').classList.remove('hidden');
+            }
+        }
+
+        function viewVerifiedSlip(appId) {
+            let applications = JSON.parse(localStorage.getItem('knga_confirmed_admissions') || '[]');
+            const app = applications.find(a => a.id === appId);
+            if (app) {
+                document.getElementById('slip-id').innerText = app.id;
+                document.getElementById('slip-date').innerText = app.date;
+                document.getElementById('slip-name').innerText = app.name;
+                document.getElementById('slip-class').innerText = app.className;
+                document.getElementById('slip-parent').innerText = app.parent;
+                document.getElementById('slip-phone').innerText = app.phone;
+                document.getElementById('slip-address').innerText = app.address;
+
+                document.getElementById('admission-modal').classList.remove('hidden');
+                document.getElementById('admission-modal').classList.add('flex');
+                document.getElementById('admission-step-1').classList.add('hidden');
+                document.getElementById('admission-step-2').classList.add('hidden');
+                document.getElementById('admission-step-3').classList.add('hidden');
+                document.getElementById('admission-step-4').classList.remove('hidden');
+            }
+        }
+
+        // Admin Portal Logic - Password set to Ojas@123
+        let customAdminPassword = localStorage.getItem('knga_admin_pass') || 'Ojas@123';
+
+        function openAdminModal() {
+            document.getElementById('admin-modal').classList.remove('hidden');
+            document.getElementById('admin-modal').classList.add('flex');
+        }
+
+        function closeAdminModal() {
+            document.getElementById('admin-modal').classList.add('hidden');
+            document.getElementById('admin-modal').classList.remove('flex');
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const pass = document.getElementById('admin-pass').value;
+            if (pass === customAdminPassword) {
+                closeAdminModal();
+                openAdminDashboard();
+            } else {
+                alert('Incorrect Password! Please enter the correct admin password.');
+            }
+        }
+
+        function openAdminDashboard() {
+            loadAdminApplications();
+            document.getElementById('admin-dashboard-modal').classList.remove('hidden');
+            document.getElementById('admin-dashboard-modal').classList.add('flex');
+        }
+
+        function closeAdminDashboard() {
+            document.getElementById('admin-dashboard-modal').classList.add('hidden');
+            document.getElementById('admin-dashboard-modal').classList.remove('flex');
+        }
+
+        function verifyApplication(appId) {
+            let applications = JSON.parse(localStorage.getItem('knga_confirmed_admissions') || '[]');
+            applications = applications.map(app => {
+                if (app.id === appId) {
+                    app.status = 'Verified & Confirmed';
+                }
+                return app;
+            });
+            localStorage.setItem('knga_confirmed_admissions', JSON.stringify(applications));
+            loadAdminApplications();
+        }
+
+        function loadAdminApplications() {
+            const applications = JSON.parse(localStorage.getItem('knga_confirmed_admissions') || '[]');
+            const tbody = document.getElementById('admin-apps-table');
+            const badge = document.getElementById('app-count-badge');
+            badge.innerText = applications.length + ' Applications';
+
+            if (applications.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="p-6 text-center text-slate-500">No student applications submitted yet.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = '';
+            applications.forEach(app => {
+                let statusActionHTML = `<button onclick="verifyApplication('${app.id}')" class="bg-amber-600 hover:bg-amber-700 text-white px-3 py-1.5 rounded font-bold text-[10px] uppercase shadow">Verify Payment</button>`;
+                if (app.status === 'Verified & Confirmed') {
+                    statusActionHTML = `<button onclick="viewVerifiedSlip('${app.id}')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded font-bold text-[10px] uppercase shadow">View & Print Slip</button>`;
+                }
+
+                tbody.innerHTML += `
+                    <tr class="hover:bg-slate-50 border-b border-slate-100">
+                        <td class="p-3 font-mono font-bold text-brand-900">${app.id}</td>
+                        <td class="p-3 font-semibold text-slate-800">${app.name}</td>
+                        <td class="p-3">${app.className}</td>
+                        <td class="p-3">${app.parent}</td>
+                        <td class="p-3">${app.phone}</td>
+                        <td class="p-3">${statusActionHTML}</td>
+                    </tr>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
